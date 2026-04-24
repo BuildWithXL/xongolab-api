@@ -47,34 +47,35 @@ const generateThankYouEmail = (name, formName) => {
         <tr>
           <td style="background-color:#0D0D0D;padding:22px 28px;text-align:center;">
             <p style="margin:0;color:#FFFFFF;font-size:20px;font-weight:bold;letter-spacing:1px;">XONGOLAB</p>
-            <p style="margin:5px 0 0;color:#DE788B;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Technology Solutions</p>
+            <p style="margin:5px 0 0;color:#DE788B;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Technology LLP</p>
           </td>
         </tr>
 
         <!-- Body -->
         <tr>
           <td style="padding:28px 28px 20px;">
-            <p style="margin:0 0 14px;font-size:17px;font-weight:bold;color:#0D0D0D;">Thank you, ${escapeHtml(name)}!</p>
+            <p style="margin:0 0 14px;font-size:17px;font-weight:bold;color:#0D0D0D;">Hi, ${escapeHtml(name)},</p>
             <p style="margin:0 0 18px;font-size:14px;line-height:1.75;color:#7E7E7E;">
-              We have successfully received your <strong>${escapeHtml(formName)}</strong> submission.
-              Our team will review your details and get back to you shortly.
+              We are in receipt of your inquiry along with the details provided by you. An engagement manager @ XongoLab will go through it. You may receive a call or email regarding the same.
             </p>
 
-            <!-- Info box — flat border only, no gradient -->
+            <p style="margin:0 0 10px;font-size:14px;line-height:1.75;color:#7E7E7E;">You can also reach out to us with the following contacts:</p>
+
+            <!-- Contact details box -->
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td style="background-color:#fff0f3;border-left:3px solid #E43C5C;padding:14px 16px;">
-                  <p style="margin:0 0 5px;font-size:13px;font-weight:bold;color:#0D0D0D;">What happens next?</p>
-                  <p style="margin:0;font-size:13px;line-height:1.65;color:#7E7E7E;">
-                    We typically respond within <strong>24&#8211;48 business hours</strong> via email or phone.
-                  </p>
+                  <p style="margin:0 0 6px;font-size:13px;color:#0D0D0D;"><strong>Whatsapp Number : +91 990 9262 648</strong></p>
+                  <p style="margin:0;font-size:13px;color:#0D0D0D;"><strong>Call us On : +91 990 9262 648</strong></p>
                 </td>
               </tr>
             </table>
 
-            <p style="margin:20px 0 0;font-size:13px;line-height:1.7;color:#7E7E7E;">
-              For urgent enquiries contact us at
-              <a href="mailto:${escapeHtml(fromEmail)}" style="color:#E43C5C;">${escapeHtml(fromEmail)}</a>.
+            <p style="margin:20px 0 6px;font-size:13px;line-height:1.7;color:#7E7E7E;text-align:center;">
+              We feel honored to have your initial trust.
+            </p>
+            <p style="margin:0;font-size:13px;font-weight:bold;line-height:1.7;color:#0D0D0D;text-align:center;">
+              Once again, thank you for choosing XongoLab Technologies LLP.
             </p>
           </td>
         </tr>
@@ -83,7 +84,7 @@ const generateThankYouEmail = (name, formName) => {
         <tr>
           <td style="background-color:#f8f8f8;padding:14px 28px;border-top:1px solid #dddddd;text-align:center;">
             <p style="margin:0;font-size:11px;color:#7E7E7E;">
-              &copy; ${year()} Xongolab Technology Solutions. All rights reserved.<br>
+              &copy; ${year()} XongoLab Technologies LLP. All rights reserved.<br>
               This is an automated message &#8212; please do not reply directly.
             </p>
           </td>
@@ -96,23 +97,23 @@ const generateThankYouEmail = (name, formName) => {
 </body>
 </html>`
 
-  const text = `Thank you for contacting Xongolab
-==================================
+  const text = `Thank you for contacting XongoLab
+=====================================
 
 Hi ${name},
 
-We have successfully received your ${formName} submission.
-Our team will review your details and get back to you shortly.
+We are in receipt of your inquiry along with the details provided by you. An engagement manager @ XongoLab will go through it. You may receive a call or email regarding the same.
 
-We typically respond within 24-48 business hours via email or phone.
+You can also reach out to us with the following contacts:
+  Whatsapp Number : +91 990 9262 648
+  Call us On      : +91 990 9262 648
 
-For urgent enquiries contact us at ${fromEmail}.
+We feel honored to have your initial trust.
 
-Best regards,
-The Xongolab Team
+Once again, thank you for choosing XongoLab Technologies LLP.
 
 --
-© ${year()} Xongolab Technology Solutions. All rights reserved.
+© ${year()} XongoLab Technologies LLP. All rights reserved.
 This is an automated message — please do not reply directly.`
 
   return { html, text }

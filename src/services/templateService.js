@@ -47,7 +47,7 @@ const generateThankYouEmail = (name, formName) => {
         <tr>
           <td style="background-color:#0D0D0D;padding:22px 28px;text-align:center;">
             <p style="margin:0;color:#FFFFFF;font-size:20px;font-weight:bold;letter-spacing:1px;">XONGOLAB</p>
-            <p style="margin:5px 0 0;color:#DE788B;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Technology LLP</p>
+            <p style="margin:5px 0 0;color:#DE788B;font-size:11px;text-transform:uppercase;letter-spacing:1px;">Technologies LLP</p>
           </td>
         </tr>
 

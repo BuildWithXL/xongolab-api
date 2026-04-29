@@ -134,12 +134,27 @@ const generateAdminEmail = (formName, data) => {
     .filter(([, v]) => v !== undefined && v !== null && v !== '')
     .map(([key, value], i) => {
       const bg = i % 2 === 0 ? '#FFFFFF' : '#f8f8f8'
+      const displayValue = escapeHtml(String(value)).replace(/\n/g, '<br>')
+      const isLong = String(value).trim().split(/\s+/).length > 30
+
+      if (isLong) {
+        return `
+        <tr style="background-color:${bg};">
+          <td colspan="2" style="padding:10px 12px;border:1px solid #dddddd;">
+            <p style="margin:0 0 6px;font-size:12px;font-weight:bold;text-transform:uppercase;
+                      letter-spacing:0.4px;color:#7E7E7E;">${escapeHtml(key)}</p>
+            <p style="margin:0;font-size:13px;color:#0D0D0D;word-break:break-word;
+                      overflow-wrap:anywhere;line-height:1.6;">${displayValue}</p>
+          </td>
+        </tr>`
+      }
+
       return `
         <tr style="background-color:${bg};">
           <td style="padding:10px 12px;border:1px solid #dddddd;font-size:13px;font-weight:bold;
-                     color:#7E7E7E;width:36%;vertical-align:top;">${escapeHtml(key)}</td>
+                     color:#7E7E7E;width:36%;vertical-align:top;white-space:nowrap;">${escapeHtml(key)}</td>
           <td style="padding:10px 12px;border:1px solid #dddddd;font-size:13px;
-                     color:#0D0D0D;word-break:break-word;">${escapeHtml(String(value))}</td>
+                     color:#0D0D0D;word-break:break-word;overflow-wrap:anywhere;">${displayValue}</td>
         </tr>`
     })
     .join('\n')
@@ -155,8 +170,8 @@ const generateAdminEmail = (formName, data) => {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4;padding:28px 16px;">
   <tr>
     <td align="center">
-      <table role="presentation" width="560" cellpadding="0" cellspacing="0"
-             style="max-width:560px;width:100%;background-color:#FFFFFF;border:1px solid #dddddd;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+             style="max-width:560px;width:100%;background-color:#FFFFFF;border:1px solid #dddddd;table-layout:fixed;">
 
         <!-- Header -->
         <tr>
